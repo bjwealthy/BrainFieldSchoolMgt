@@ -23,7 +23,7 @@ const Exam = () => {
         <ExamForm>
           <FormLabel>Name: </FormLabel>
           <FormInput type='text' required/>
-          <FormLabel>Registration: </FormLabel>
+          <FormLabel>Registration: </FormLabel>     
           <FormInput type='text' required/>
           <FormLabel>Class: </FormLabel>
           <FormInput type='text' required/>

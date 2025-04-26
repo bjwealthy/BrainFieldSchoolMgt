@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
-// components import
+
 import Home from './components/Home';
 import ChooseUser from './components/ChooseUser';
 import StudentSignIn from './components/StudentSignin';
 import TeacherSignIn from './components/TeacherSignin';
 import AdminSignIn from './components/AdminSignin';
 import AdminDashboard from './pages/Admin/Dashboard';
+
 
 // admin pages import
 import Students from './pages/Admin/Students';
@@ -17,15 +18,22 @@ import EventCalendar from './pages/Admin/EventCalendar';
 import Exam from './pages/Admin/Exam';
 import Library from './pages/Admin/Library';
 import Performance from './pages/Admin/Performance';
-import Settings from './pages/Admin/Settings';
+import SettingsProfile from './pages/Admin/SettingsProfile';
 import Sidebar from './pages/Admin/Sidebar';
+import Attendance from './pages/Admin/Attendance';
+
 
 //students pages import
-// import Announcement from './pages/Students/Announcement';
-// import Assignment from './pages/Students/Assignment';
-// import Attendance from './pages/Students/Attendance';
-// import Dashboard from './pages/Students/Dashboard';
-// import Exam from './pages/Students/Exam';
+import StudentDashboard from './pages/Students/StudentDashboard';
+import StudentExam from './pages/Students/StudentExam';
+import StudentAssignments from './pages/Students/StudentsAssignment';
+import StudentPerformance from './pages/Students/StudentPerformance';
+import StudentLibrary from './pages/Students/StudentLibrary';
+import StudentAttendance from './pages/Students/StudentAttendance';
+import StudentAnnouncement from './pages/Students/StudentAnnouncement';
+import StudentProfile from './pages/Students/StudentProfile';
+// 
+// 
 // import Library from './pages/Students/Library';
 // import Performance from './pages/Students/Performance';
 // import Profile from './pages/Students/Profile';
@@ -65,26 +73,29 @@ function App() {
           <Route exact path="/admin/students" element={<Students />} />
           <Route exact path="/admin/teachers" element={<Teachers />} />  
           <Route exact path="/admin/communication" element={<Announcement />} /> 
+          <Route exact path="/admin/attendance" element={<Attendance />} />
           <Route exact path="/admin/assignments" element={<Assignment />} /> 
           <Route exact path="/admin/classes" element={<Classes />} /> 
           <Route exact path="/admin/event-calendar" element={<EventCalendar />} /> 
           <Route exact path="/admin/exams" element={<Exam />} /> 
           <Route exact path="/admin/library" element={<Library />} /> 
           <Route exact path="/admin/performance" element={<Performance />} /> 
-          <Route exact path="/admin/settings" element={<Settings />} /> 
+          <Route exact path="/admin/settings" element={<SettingsProfile />} /> 
           <Route exact path="/admin/sidebar" element={<Sidebar />} /> 
           
           
 
           {/* student routes */}
-          {/* <Route exact path="/student/dashboard" element={<StudentDashboard />} /> 
-          <Route exact path="/student/announcement" element={<Announcement />} /> 
-          <Route exact path="/student/assignment" element={<Assignment />} /> 
-          <Route exact path="/student/attendance" element={<Attendance />} /> 
-          <Route exact path="/student/exam" element={<Exam />} /> 
-          <Route exact path="/student/library" element={<Library />} /> 
-          <Route exact path="/student/performance" element={<Performance />} /> 
-          <Route exact path="/student/profile" element={<Profile />} />  */}
+          <Route exact path="/student/StudentLibrary" element={<StudentLibrary />}  />
+          <Route exact path="/student/dashboard" element={<StudentDashboard />} /> 
+          <Route exact path="/student/attendance" element={<StudentAttendance />} /> 
+          <Route exact path="/student/communication" element={<StudentAnnouncement />} /> 
+          <Route exact path="/student/assignments" element={<StudentAssignments />} /> 
+          <Route exact path="/student/classes" element={<Classes />} />  
+          <Route exact path="/student/exam" element={<StudentExam />} /> 
+          <Route exact path="/student/library" element={<StudentLibrary />} /> 
+          <Route exact path="/student/performance" element={<StudentPerformance />} /> 
+          <Route exact path="/student/profile" element={<StudentProfile />} />   
 
           {/* teaacher routes */}
           {/* <Route exact path="/teacher/dashboard" element={<AdminDashboard />} /> 
