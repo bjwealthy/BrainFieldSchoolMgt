@@ -55,13 +55,13 @@ const StudentExam = () => {
           )}
           <ExamChartContainer>
             <Bar
-            ref={chartRef}
-            data={barChartData}
-            options={chartOptions}
-          />
+              ref={chartRef}
+              data={barChartData}
+              options={chartOptions}
+            />
           </ExamChartContainer>
         </ExamResultsContainer>
-        
+
       </Content>
     </ExamChartContainer>
   )
