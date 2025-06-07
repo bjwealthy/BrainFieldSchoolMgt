@@ -88,58 +88,54 @@ const Sidebar = () => {
   return (
     <SidebarContainer style={{ width: isOpen ? '250px' : '80px' }}>
     <SidebarHeader>
-      {/* <Logo src={bg1} alt="Logo" to="/admin/dashboard"/> */}
+      {/* <Logo src={bg1} alt="Logo" to="/teacher/dashboard"/> */}
       <StyledLink to="/"><Logo src={bg1} alt="Logo" /></StyledLink>
-            
+          
     </SidebarHeader>
     <SidebarNav>
       <SidebarNavItem>
         <SidebarIcon><BsGraphUp /></SidebarIcon>
-        <StyledLink to="/admin/dashboard">Dashboard</StyledLink>
+        <StyledLink to="/teacher/dashboard">Dashboard</StyledLink>
       </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/admin/classes">Classes</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/admin/students">Students</StyledLink>
+          <StyledLink to="/teacher/students">Students</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsPerson /></SidebarIcon>
-          <StyledLink to="/admin/teachers">Teachers</StyledLink>
+          <StyledLink to="/teacher/teachers">Teachers</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsFileText /></SidebarIcon>
-          <StyledLink to="/admin/assignments">Assignments</StyledLink>
+          <StyledLink to="/teacher/assignment">Assignments</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsBook /></SidebarIcon>
-          <StyledLink to="/admin/exams">Exams</StyledLink>
+          <StyledLink to="/teacher/exam">Exams</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsGraphDown /></SidebarIcon>
-          <StyledLink to="/admin/performance">Performance</StyledLink>
+          <StyledLink to="/teacher/performance">Performance</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsCalendar /></SidebarIcon>
-          <StyledLink to="/admin/attendance">Attendance</StyledLink>
+          <StyledLink to="/teacher/attendance">Attendance</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsBook /></SidebarIcon>
-          <StyledLink to="/admin/library">Library</StyledLink>
+          <StyledLink to="/teacher/library">Library</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsChatDots /></SidebarIcon>
-          <StyledLink to="/admin/announcement">Announcement</StyledLink>
+          <StyledLink to="/teacher/announcement">Announcement</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsCalendarEvent /></SidebarIcon>
-          <StyledLink to="/admin/event-calendar">Events & Calendar</StyledLink>
+          <StyledLink to="/teacher/event-calendar">Events & Calendar</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsGear /></SidebarIcon>
-          <StyledLink to="/admin/settings">Settings & Profile</StyledLink>
+          <StyledLink to="/teacher/settings">Settings & Profile</StyledLink>
         </SidebarNavItem>
         </SidebarNav>
       <ToggleButton onClick={toggleSidebar}>

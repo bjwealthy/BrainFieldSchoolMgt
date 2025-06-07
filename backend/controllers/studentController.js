@@ -1,25 +1,39 @@
 import { Student } from "../models/studentSchema.js";
+import { handleValidationError } from "../middleware/errorHandler.js";
 
 export const createStudent = async (req, res) => {
+    console.log(req.body);
+    
     const { name, registrationNumber, grade } = req.body;
     
     try {
-        const student = await Student.create({
-        name,
-        registrationNumber,
-        grade,
-        });
+        console.log(req.body);
+    //     const student = await Student.create({
+    //     name,
+    //     registrationNumber,
+    //     grade,
+    //     });
     
-        res.status(201).json({
+    //     res.status(201).json({
+    //     success: true,
+    //     student,
+    //     });
+    // } catch (error) {
+    //     res.status(500).json({
+    //     success: false,
+    //     message: error.message,
+    //     });
+    // }
+    if(!name || !registrationNumber || !grade){
+        handleValidationError("Please fill full form", 400)
+    }await Student.create({name, registrationNumber, grade});
+    res.status(200).json({
         success: true,
-        student,
-        });
-    } catch (error) {
-        res.status(500).json({
-        success: false,
-        message: error.message,
-        });
-    }
+        messsage: "Student created"
+    })
+}catch(err){
+    next(err)
+}
 }
 
 export const getAllStudents = async (req, res) => {

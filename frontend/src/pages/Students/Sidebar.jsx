@@ -88,7 +88,8 @@ const Sidebar = () => {
   return (
     <SidebarContainer style={{ width: isOpen ? '250px' : '80px' }}>
       <SidebarHeader>
-        <Logo src={bg1} alt="Logo" />
+        {/* <Logo src={bg1} alt="Logo" /> */}
+        <StyledLink to="/"><Logo src={bg1} alt="Logo" /></StyledLink>
       </SidebarHeader>
       <SidebarNav>
         <SidebarNavItem>
@@ -117,7 +118,7 @@ const Sidebar = () => {
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsChatDots /></SidebarIcon>
-          <StyledLink to="/student/communication">Announcement</StyledLink>
+          <StyledLink to="/student/announcement">Announcement</StyledLink>
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsGear /></SidebarIcon>
