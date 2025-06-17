@@ -1,5 +1,5 @@
-import { handleValidationError } from "../middleware/errorHandler";
-import { Class } from "../models/classSchema";
+import { handleValidationError } from "../middleware/errorHandler.js";
+import { Class } from "../models/classSchema.js";
 
 export const createClass = async (req, res, next) => {
     const { grade } = req.body;

@@ -11,7 +11,7 @@ libraryRouter.get("/getall", getAllBooks);
 // Get a book by registration number
 libraryRouter.get("/getByReg/:registrationNumber", getBookByName);
 // Get a book by grade
-libraryRouterRouter.get("/getByGrade/:grade", getBookByAuthor);  
+libraryRouter.get("/getByGrade/:grade", getBookByAuthor);  
 // Update a book
 libraryRouter.put("/:id", updateBook);
 // Delete a book

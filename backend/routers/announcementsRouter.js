@@ -9,5 +9,7 @@ router.post("/", createAnnouncements);
 // Get all students
 router.get("/getall", getAllAnnouncements);
 
+export default router;
+
 
 

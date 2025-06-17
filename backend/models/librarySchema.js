@@ -13,5 +13,6 @@ const librarySchema = new mongoose.Schema({
 
     }
 });
+export default librarySchema;
 
 export const Book = mongoose.model("Library", librarySchema);

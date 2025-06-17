@@ -1,5 +1,5 @@
 import { Attendance } from "../models/attendanceSchema.js";
-import { handleValidationError } from "../middleware/errorHandler";
+import { handleValidationError } from "../middleware/errorHandler.js";
 
 export const markAttendance = async (req, res, next) => {
     console.log(req.body);

@@ -1,5 +1,5 @@
-import { Exams } from "../models/examSchema";
-import { handleValidationError } from "../middleware/errorHandler";
+import { Exams } from "../models/examSchema.js";
+import { handleValidationError } from "../middleware/errorHandler.js";
 
 export const addExam = async (req, res, next) => {
     console.log(req.body);
@@ -19,6 +19,7 @@ export const addExam = async (req, res, next) => {
         next(err);
     }
 }
+
 export const getAllExams = async (req, res, next) => {
     try {
         const exams = await Exams.find();
@@ -30,6 +31,7 @@ export const getAllExams = async (req, res, next) => {
         next(err);
     }
 }
+
 export const getExamById = async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -46,6 +48,7 @@ export const getExamById = async (req, res, next) => {
         next(err);
     }
 }
+
 export const updateExam = async (req, res, next) => {
     const { id } = req.params;
     const { name, registrationNumber, className, marks } = req.body;

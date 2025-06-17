@@ -6,6 +6,16 @@ const teacherSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    phoneNumber: {
+        type: String,
+        required: true,
+        validate: {
+            validator: function(v) {
+                return /\d{11}/.test(v);
+            },
+            message: 'Phone number must be 11 digits',
+        },
+    },
     email: {
         type: String,
         required: true,
@@ -19,17 +29,9 @@ const teacherSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    phoneNumber: {
-        type: String,
-        required: true,
-        validate: {
-            validator: function(v) {
-                return /\d{10}/.test(v);
-            },
-            message: 'Phone number must be 10 digits',
-        },
-    },
+    
 });
+export default teacherSchema
 export const Teachers = mongoose.model('Teachers', teacherSchema);
 // This schema defines a Teacher model with fields for name, email, subject, and phone number.
 // The email field is validated to ensure it is in the correct format, and the phone number is validated to ensure it is exactly 10 digits long.

@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from './Sidebar';
 import axios from 'axios';
 
 import {EventCalendarContainer,  Content, CalendarContainer, Event, Events, AddEventButton, AddEventForm, EventInput} from '../../styles/EventCalendarStyles';
 
 const EventCalendar = () => {
+  const [events, setEvents] = useState([]);
+  const [newEvent, setNewEvent] = useState('')
+  const [error, setError] = useState(null);
+
+  useEffect( () => {
+    fetchEvents();
+  }, []);
+
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get('hgttps://localhost:4000/api/v1/events/getall');
+      const retrievedEvents = response.data.
+    } catch (error) {
+        console.error('We cant fetch events now', error)
+    }
+  }
+
   return (
     <EventCalendarContainer>
       <Sidebar  />

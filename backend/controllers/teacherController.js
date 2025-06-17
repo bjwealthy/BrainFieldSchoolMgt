@@ -1,14 +1,14 @@
-import { Teachers } from "../models/teacherSchema";
-import { handleValidationError } from "../middleware/errorHandler";
+import { Teachers } from "../models/teacherSchema.js";
+import { handleValidationError, errorHandler } from "../middleware/errorHandler.js";
 
-export const addTeacher = async (req, res, next) => {
-    const { name, email, subject } = req.body;
+export const createTeacher = async (req, res, next) => {
+    const { name, phoneNumber, email, subject } = req.body;
 
     try {
         if (!name || !registrationNumber || !subject) {
             handleValidationError("Please fill all fields!", 400);
         }
-        const teacher = await Teachers.create({ name, email, subject });
+        const teacher = await Teachers.create({ name, phoneNumber, email, subject });
 
         res.status(200).json({
             success: true,
@@ -47,9 +47,9 @@ export const getTeacherById = async (req, res, next) => {
 }
 export const updateTeacher = async (req, res, next) => {
     const { id } = req.params;
-    const { name, registrationNumber, subject } = req.body;
+    const { name, phoneNumber, email, subject } = req.body;
     try {
-        const teacher = await Teachers.findByIdAndUpdate(id, { name, registrationNumber, subject }, { new: true });
+        const teacher = await Teachers.findByIdAndUpdate(id, { name, phoneNumber, email, subject }, { new: true });
         if (!teacher) {
             handleValidationError("Teacher not found!", 404);
         }
